@@ -22,7 +22,6 @@ public class Car {
     @Column(name = "id_car")
     private long id;
     @PlateMatches
-//    @Column(unique = true)
     private String plate;
 
     @OneToOne(cascade = CascadeType.ALL)

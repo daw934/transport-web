@@ -8,6 +8,9 @@ public class CurrencyService {
 
     public Currency getEuro(){
         RestTemplate restTemplate = new RestTemplate();
+
+     Currency currency=   restTemplate.getForObject("http://api.nbp.pl/api/exchangerates/rates/A/EUR?format=json",Currency.class);
+
         return restTemplate.getForObject("http://api.nbp.pl/api/exchangerates/rates/A/EUR?format=json",Currency.class);
     }
 }

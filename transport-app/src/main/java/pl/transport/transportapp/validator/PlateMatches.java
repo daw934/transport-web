@@ -9,6 +9,7 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.METHOD,ElementType.FIELD,ElementType.ANNOTATION_TYPE,ElementType.PARAMETER,ElementType.CONSTRUCTOR})
 @Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = PlateMatchesValidator.class)
 public @interface PlateMatches {
     String message() default "Plate don't match to plate in poland";
     Class<?>[] groups() default {};
